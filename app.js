@@ -20,6 +20,7 @@ if(userText !== ''){
        ui.showAlert('the user didnt found', 'alert alert-danger');
       } else {
         ui.showProfile(data.profile);
+        ui.showRepos(data.repos);
       }
     })
   
