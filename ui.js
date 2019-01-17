@@ -38,9 +38,11 @@ class UI {
     div.appendChild(document.createTextNode(message));
     const container = document.querySelector('.searchContainer');
     const search = document.querySelector('.search');
-    msContentScript.insertBefore(div, searc);
+    container.insertBefore(div, search);
     
   }
+
+  // clear alert message
   // Clear profile
   clearProfile() {
     this.profile.innerHTML = '';
