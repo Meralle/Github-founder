@@ -33,18 +33,43 @@ class UI {
   }
   // Show alert message
   showAlert(message, className) {
-    const div = document.createElement('div');
-    div.className = className;
-    div.appendChild(document.createTextNode(message));
-    const container = document.querySelector('.searchContainer');
-    const search = document.querySelector('.search');
-    container.insertBefore(div, search);
-    
-  }
+    // clear any remaning alerts
+    this.clearAlert();
 
-  // clear alert message
-  // Clear profile
-  clearProfile() {
-    this.profile.innerHTML = '';
+    const div = document.createElement('div');
+
+    div.className = className;
+
+    div.appendChild(document.createTextNode(message));
+
+    const container = document.querySelector('.searchContainer');
+
+    const search = document.querySelector('.search');
+    
+    container.insertBefore(div, search);
+
+    // Timeout after 3 sec
+  setTimeout(() => {
+    this.clearAlert();
+  }, 3000);
+}
+    
+// clear alert message
+clearAlert() {
+  const currentAlert = document.querySelector('.alert');
+  
+  if(currentAlert){
+    currentAlert.remove();
   }
 }
+
+// Clear profile
+clearProfile() {
+  this.profile.innerHTML = '';
+}
+}
+ 
+
+  
+
+  
