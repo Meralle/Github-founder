@@ -17,13 +17,13 @@ if(userText !== ''){
     .then(data => {
       console.log(data);
       if(data.profile.message === 'Not Found') {
-       
+       ui.showAlert('the user didnt found, alert alert-danger');
       } else {
-        
+        ui.showProfile(data.profile);
       }
     })
   
 } else {
-
+  ui.clearProfile();
 }
 });
