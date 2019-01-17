@@ -1,5 +1,7 @@
 // Init Github
 const github = new Github;
+// Init Ui
+const ui = new UI;
 
 // Search input
 const searchUser = document.getElementById('searchUser');
@@ -16,10 +18,12 @@ if(userText !== ''){
       console.log(data);
       if(data.profile.message === 'Not Found') {
        
+      } else {
+        
       }
     })
   
 } else {
-  
+
 }
 });
